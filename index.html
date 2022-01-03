@@ -207,6 +207,44 @@ E-mail: <a href="mailto:duo_bin@163.com">duo_bin@163.com</a></p>
 </li>
 </ul>
 <p><br />
+  
+<A NAME="Statistics">
+                    <h2><i class="fa fa-universal-access" aria-hidden="true"></i>&nbsp;&nbsp;Statistics</h2>
+                </A>
+
+                <script type="text/javascript"
+                    src="//rf.revolvermaps.com/0/0/8.js?i=5kt146cjjfk&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=georgia&amp;l=33"
+                    async="async"></script>
+
+
+                <div id="article"></div>
+                <div id="back_top">
+                    <div class="arrow"></div>
+                    <div class="stick"></div>
+                </div>
+
+                <script>
+                    $(function () {
+                        $(window).scroll(function () { //If scroll
+                            var scrollt = document.documentElement.scrollTop + document.body.scrollTop; //Getting Height after scroll
+                            if (scrollt > 400) {
+                                $("#back_top").fadeIn(400);
+                            } else {
+                                $("#back_top").stop().fadeOut(400);
+                            }
+                        });
+
+                        $("#back_top").click(function () {
+
+                            $("html,body").animate({
+                                scrollTop: "0px"
+                            }, 200);
+
+                        });
+
+                    });
+                </script>
+  
 <a href="cv/cv1.pdf">A brief cv</a>.</p>
 </td>
 </tr>
