@@ -37,6 +37,61 @@
       padding-top: 5px;
     }
 
+    .news-container {
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+      background: #f8f9fa;
+      border-radius: 8px;
+      border: 1px solid #e9ecef;
+      padding: 15px;
+    }
+
+    .news-scroll {
+      position: absolute;
+      width: 100%;
+      animation: scrollNews 20s linear infinite;
+    }
+
+    .news-item {
+      display: flex;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px dashed #dee2e6;
+      margin-bottom: 8px;
+    }
+
+    .news-item:last-child {
+      border-bottom: none;
+    }
+
+    .news-date {
+      font-weight: bold;
+      color: #2c3e50;
+      min-width: 100px;
+      margin-right: 15px;
+    }
+
+    .news-content {
+      color: #555;
+      flex: 1;
+    }
+
+    @keyframes scrollNews {
+      0% {
+        transform: translateY(0);
+      }
+
+      100% {
+        transform: translateY(-100%);
+      }
+    }
+
+    /* 鼠标悬停时暂停滚动 */
+    .news-container:hover .news-scroll {
+      animation-play-state: paused;
+    }
+
     .layout-content {
       margin-left: 17%;
       width: 83%;
@@ -210,6 +265,31 @@
 
         <div class="recentNews">
           <h2><a name="Recent News">团队新闻（Recent News）</a></h2>
+
+          <div class="news-container">
+            <div class="news-scroll">
+              <div class="news-item">
+                <span class="news-date">2024-12-20</span>
+                <span class="news-content">团队在《IEEE Transactions on Intelligent Transportation Systems》发表最新研究成果</span>
+              </div>
+              <div class="news-item">
+                <span class="news-date">2024-12-15</span>
+                <span class="news-content">硕士研究生张三获得国家奖学金</span>
+              </div>
+              <div class="news-item">
+                <span class="news-date">2024-12-10</span>
+                <span class="news-content">团队参加国际无人系统大会并作主题报告</span>
+              </div>
+              <div class="news-item">
+                <span class="news-date">2024-12-05</span>
+                <span class="news-content">与某企业合作项目正式启动</span>
+              </div>
+              <div class="news-item">
+                <span class="news-date">2024-11-28</span>
+                <span class="news-content">团队研究成果获省级科技进步奖</span>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="researchResult">
