@@ -126,10 +126,10 @@ class PaginationManager {
       const itemElement = document.createElement('div');
       itemElement.className = 'paper-item';
       itemElement.innerHTML = `
-                        <p>
+                        <div>
                             <span class="paper-number">[${itemNumber}]</span>
                             ${item}
-                        </p>
+                        </div>
                     `;
       container.appendChild(itemElement);
     });
@@ -222,4 +222,5 @@ document.addEventListener('DOMContentLoaded', function () {
     pageSizeSelectId: 'ip-page-size-select',
     statsElementId: 'ip-stats'
   });
+
 });
