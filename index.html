@@ -14,7 +14,26 @@
       padding: 0;
       font-family: 'SimSun', '宋体', serif;
     }
+/* 添加到现有样式中 */
+body, .layout-menu, .layout-content, .menu-item, h1, h2, h3, h4, h5, h6, p, span, div, li, td, th, a {
+    font-family: Helvetica, Arial, 'SimSun', '宋体', serif;
+}
 
+/* 或者更精确地控制 */
+body {
+    font-family: Helvetica, Arial, 'SimSun', '宋体', serif;
+    /* 备用字体栈：英文优先Helvetica，中文使用宋体 */
+}
+
+/* 确保中文内容使用宋体 */
+:lang(zh) {
+    font-family: 'SimSun', '宋体', serif;
+}
+
+/* 代码、表格等特殊元素 */
+pre, code {
+    font-family: 'Courier New', monospace, 'SimSun', '宋体';
+}
     #tlayout {
       width: 100%;
       position: relative;
@@ -602,6 +621,7 @@
 <script type="module" src="./data/baseData.js"></script>
 
 </html>
+
 
 
 
