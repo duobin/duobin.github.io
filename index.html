@@ -12,28 +12,47 @@
     body {
       margin: 0;
       padding: 0;
-      font-family: 'SimSun', '宋体', serif;
+      font-family: "SimSun", "宋体", serif;
     }
-/* 添加到现有样式中 */
-body, .layout-menu, .layout-content, .menu-item, h1, h2, h3, h4, h5, h6, p, span, div, li, td, th, a {
-    font-family: Helvetica, Arial, 'SimSun', '宋体', serif;
-}
 
-/* 或者更精确地控制 */
-body {
-    font-family: Helvetica, Arial, 'SimSun', '宋体', serif;
-    /* 备用字体栈：英文优先Helvetica，中文使用宋体 */
-}
+    /* 添加到现有样式中 */
+    body,
+    .layout-menu,
+    .layout-content,
+    .menu-item,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    span,
+    div,
+    li,
+    td,
+    th,
+    a {
+      font-family: Helvetica, Arial, "SimSun", "宋体", serif;
+    }
 
-/* 确保中文内容使用宋体 */
-:lang(zh) {
-    font-family: 'SimSun', '宋体', serif;
-}
+    /* 或者更精确地控制 */
+    body {
+      font-family: Helvetica, Arial, "SimSun", "宋体", serif;
+      /* 备用字体栈：英文优先Helvetica，中文使用宋体 */
+    }
 
-/* 代码、表格等特殊元素 */
-pre, code {
-    font-family: 'Courier New', monospace, 'SimSun', '宋体';
-}
+    /* 确保中文内容使用宋体 */
+    :lang(zh) {
+      font-family: "SimSun", "宋体", serif;
+    }
+
+    /* 代码、表格等特殊元素 */
+    pre,
+    code {
+      font-family: "Courier New", monospace, "SimSun", "宋体";
+    }
+
     #tlayout {
       width: 100%;
       position: relative;
@@ -55,6 +74,10 @@ pre, code {
     .menu-item {
       font-size: 18px;
       padding-top: 5px;
+    }
+
+    h2 {
+      margin-top: 20px;
     }
 
     .news-container {
@@ -302,54 +325,75 @@ pre, code {
 
 <body>
   <table summary="Table for page layout." id="tlayout">
-    <tr valign="top" style="width: 100%;">
+    <tr valign="top" style="width: 100%">
       <td class="layout-menu">
         <div class="menu-category">Menu</div>
-        <div class="menu-item"><a href="index.html" class="current">Home</a></div>
+        <div class="menu-item">
+          <a href="index.html" class="current">Home</a>
+        </div>
         <!-- 添加二级索引 -->
-        <div class="menu-item"><a href="#U3IC Introduction">U3IC Introduction</a></div>
-        <div class="menu-item"><a href="#Research Interests">Research Interests</a></div>
+        <div class="menu-item">
+          <a href="#U3IC Introduction">U3IC Introduction</a>
+        </div>
+        <div class="menu-item">
+          <a href="#Research Interests">Research Interests</a>
+        </div>
         <div class="menu-item"><a href="#U3IC Leader">U3IC Leader</a></div>
         <div class="menu-item"><a href="#Recent News">Recent News</a></div>
-        <div class="menu-item"><a href="#Research Achievements">Research Achievements</a></div>
-        <div class="menu-item"><a href="#Research Projects">Research Projects</a></div>
-        <div class="menu-item"><a href="#Research Platform">Research Platform</a></div>
+        <div class="menu-item">
+          <a href="#Research Achievements">Research Achievements</a>
+        </div>
+        <div class="menu-item">
+          <a href="#Research Projects">Research Projects</a>
+        </div>
+        <div class="menu-item">
+          <a href="#Research Platform">Research Platform</a>
+        </div>
 
-        <div class="menu-item"><a
-            href="https://scholar.google.com/citations?user=Bm94cNkAAAAJ&hl=en&inst=6453797383205921872&oi=ao">Google
-            Scholar</a></div>
-        <div class="menu-item"><a href="https://www.researchgate1.net/profile/Xiuze-Zhou">ResearchGate</a></div>
-        <div class="menu-item"><a href="https://github.com/duobin">GitHub</a></div>
-        <div class="menu-item"><a href="https://www.cdut.edu.cn">CDUT</a></div>
+        <div class="menu-item">
+          <a href="https://scholar.google.com/citations?user=Bm94cNkAAAAJ&hl=en&inst=6453797383205921872&oi=ao">Google
+            Scholar</a>
+        </div>
+        <div class="menu-item">
+          <a href="https://www.researchgate1.net/profile/Xiuze-Zhou">ResearchGate</a>
+        </div>
+        <div class="menu-item">
+          <a href="https://github.com/duobin">GitHub</a>
+        </div>
+        <div class="menu-item">
+          <a href="https://www.cdut.edu.cn">CDUT</a>
+        </div>
       </td>
       <td class="layout-content">
         <div id="toptitle">
-          <h1>无人系统AI大数据创新研究中心（U3IC） </h1>
+          <h1>无人系统AI大数据创新研究中心（U3IC）</h1>
         </div>
 
         <div class="groupIntroduction">
-          <h2><a name="U3IC Introduction">团队介绍（U3IC Introduction）</a></h2>
+          <h2>
+            <a name="U3IC Introduction">团队介绍（U3IC Introduction）</a>
+          </h2>
           <div id="intro"></div>
         </div>
         <div class="researchDirection">
-          <h2><a name="Research Interests">团队研究方向（Research Interests）</a></h2>
-          <ul id="item-list-direction">
-          </ul>
+          <h2>
+            <a name="Research Interests">团队研究方向（Research Interests）</a>
+          </h2>
+          <ul id="item-list-direction"></ul>
         </div>
 
         <div class="groupLeader">
           <h2><a name="U3IC Leader">团队负责人（U3IC Leader）</a></h2>
-          <p style="text-indent:2em;">
-            多滨，博士，教授，硕士生导师，四川省省级科技领军人才，四川省海外高层次留学人才，成都市科技青年人才，四川省侨联特聘专家，四川省科技协同创新促进会引才引智基地专家顾问。
+          <p style="text-indent: 2em">
+            多滨，博士，教授，硕士生导师，四川省省级科技领军人才，四川省海外高层次留学人才，成都市科技青年人才，成都市高新区高层次四派人才，四川省侨联特聘专家，四川省科技协同创新促进会引才引智基地专家顾问。
             现任成都理工大学网络空间安全系主任，获得校青年骨干教师，校优秀教师，校优秀研究生导师团队骨干成员等奖励。
             兼任四川省人工智能协会副秘书长，四川省高等院校计算机基础教育学会理事，《计算机科学与探索》期刊青年编委，IEEE高级会员，CCF高级会员。主要从事具身智能自主无人系统、无人系统智能安全、工业物联网与工业人工智能等学科交叉研究与应用。
             先后在悉尼大学和哈尔滨工业大学获得双博士学位，在电子科技大学通信抗干扰全国重点实验室从事博士后研究工作，在新加坡国立大学电气与计算机工程学院公派访问。
             主持教育教学改革类项目5项，获校青年教师教学竞赛一等奖，培养硕士研究生30余名，其中多人次获国家奖学金、学业奖学金、学科竞赛等奖励。近年来在IEEE等出版的国内外权威期刊和会议上发表SCI/EI检索论文100余篇，发表英文学术专著2部，受理专利10余项（授权4项），获软件著作权20余项。
             先后获得国家自然科学基金、国家重点研发计划、装备发展部共用信息系统装备预研项目、四川省区域创新合作项目、四川省国际科技创新/港澳台科技创新合作项目、四川省重点研发计划项目等10余项项目的支持。
             作为主要完成人获得2025年中国发明协会发明创业奖创新奖二等奖（排名第2）、2022年度川渝产学研协同创新成果奖三等奖（排名第1）、2023年高级无人飞行系统国际会议最佳论文奖（排名第1）、2025年云计算、大数据应用与软件工程国际学术会议最佳论文奖（通信作者）、中国研究生创新实践系列大赛优秀指导教师奖等10余项奖励，并担任多部国内外权威期刊特约审稿人。
-          <p>
-            <br>
-          <p> Email:duo_bin@163.com</p>
+          </p>
+          <b>Email:duo_bin@163.com</b>
         </div>
 
         <div class="recentNews">
@@ -359,7 +403,8 @@ pre, code {
             <div class="news-scroll">
               <div class="news-item">
                 <span class="news-date">2024-12-20</span>
-                <span class="news-content">团队在《IEEE Transactions on Intelligent Transportation Systems》发表最新研究成果</span>
+                <span class="news-content">团队在《IEEE Transactions on Intelligent Transportation
+                  Systems》发表最新研究成果</span>
               </div>
               <div class="news-item">
                 <span class="news-date">2024-12-15</span>
@@ -382,16 +427,19 @@ pre, code {
         </div>
 
         <div class="researchResult">
-          <h2><a name="Research Achievements">研究成果(Research Achievements)</a></h2>
+          <h2>
+            <a name="Research Achievements">研究成果(Research Achievements)</a>
+          </h2>
           <div class="section">
             <h2>1、期刊论文</h2>
-            <div class="stats" id="qikan-stats">共{{ qikanData.length}}篇论文</div>
+            <div class="stats" id="qikan-stats">
+              共{{ qikanData.length}}篇论文
+            </div>
             <div id="qikan-list-container"></div>
             <div class="pagination-controls">
               <button id="qikan-prev-page" disabled>上一页</button>
-              <span id="qikan-page-info">第 <span id="qikan-current-page">1</span> 页 / 共 <span
-                  id="qikan-total-pages">1</span>
-                页</span>
+              <span id="qikan-page-info">第 <span id="qikan-current-page">1</span> 页 / 共
+                <span id="qikan-total-pages">1</span> 页</span>
               <button id="qikan-next-page">下一页</button>
               <span class="page-size">每页显示：</span>
               <select id="qikan-page-size-select" class="page-size-select">
@@ -401,21 +449,25 @@ pre, code {
                 <option value="50">50条</option>
               </select>
             </div>
-            <p class="note"><b>Note</b>: * indicates the corresponding author.</p>
-            <p><a class="external-link"
+            <p class="note">
+              <b>Note</b>: * indicates the corresponding author.
+            </p>
+            <p>
+              <a class="external-link"
                 href="https://scholar.google.com/citations?user=Bm94cNkAAAAJ&hl=en&inst=6453797383205921872&oi=ao">Full
-                list of
-                publications in Google Scholar</a>.</p>
+                list of publications in Google Scholar</a>.
+            </p>
           </div>
           <div class="section">
             <h2>2、会议论文</h2>
-            <div class="stats" id="huiyi-stats">共{{huiyiData.length}}篇论文</div>
+            <div class="stats" id="huiyi-stats">
+              共{{huiyiData.length}}篇论文
+            </div>
             <div id="huiyi-list-container"></div>
             <div class="pagination-controls">
               <button id="huiyi-prev-page" disabled>上一页</button>
-              <span id="huiyi-page-info">第 <span id="huiyi-current-page">1</span> 页 / 共 <span
-                  id="huiyi-total-pages">1</span>
-                页</span>
+              <span id="huiyi-page-info">第 <span id="huiyi-current-page">1</span> 页 / 共
+                <span id="huiyi-total-pages">1</span> 页</span>
               <button id="huiyi-next-page">下一页</button>
               <span class="page-size">每页显示：</span>
               <select id="huiyi-page-size-select" class="page-size-select">
@@ -428,12 +480,14 @@ pre, code {
           </div>
           <div class="section">
             <h2>3、专著</h2>
-            <div class="stats" id="zhuanzhu-stats">共{{zhuanzhuData.length}}篇专著</div>
+            <div class="stats" id="zhuanzhu-stats">
+              共{{zhuanzhuData.length}}篇专著
+            </div>
             <div id="zhuanzhu-list-container"></div>
             <div class="pagination-controls">
               <button id="zhuanzhu-prev-page" disabled>上一页</button>
-              <span id="zhuanzhu-page-info">第 <span id="zhuanzhu-current-page">1</span> 页 / 共 <span
-                  id="zhuanzhu-total-pages">1</span> 页</span>
+              <span id="zhuanzhu-page-info">第 <span id="zhuanzhu-current-page">1</span> 页 / 共
+                <span id="zhuanzhu-total-pages">1</span> 页</span>
               <button id="zhuanzhu-next-page">下一页</button>
               <span class="page-size">每页显示：</span>
               <select id="zhuanzhu-page-size-select" class="page-size-select">
@@ -446,12 +500,14 @@ pre, code {
           </div>
           <div class="section">
             <h3>4、知识产权</h3>
-            <div class="stats" id="ip-stats">共{{ipData.length}}项知识产权</div>
+            <div class="stats" id="ip-stats">
+              共{{ipData.length}}项知识产权
+            </div>
             <div id="ip-list-container"></div>
             <div class="pagination-controls">
               <button id="ip-prev-page" disabled>上一页</button>
-              <span id="ip-page-info">第 <span id="ip-current-page">1</span> 页 / 共 <span id="ip-total-pages">1</span>
-                页</span>
+              <span id="ip-page-info">第 <span id="ip-current-page">1</span> 页 / 共
+                <span id="ip-total-pages">1</span> 页</span>
               <button id="ip-next-page">下一页</button>
               <span class="page-size">每页显示：</span>
               <select id="ip-page-size-select" class="page-size-select">
@@ -461,22 +517,84 @@ pre, code {
                 <option value="50">50条</option>
               </select>
             </div>
-
+          </div>
+          <div class="section">
+            <h3>5、标准制定</h3>
           </div>
           <div class="award">
-            <h3>5、奖励与荣誉（Awards & Honors）</h3>
+            <h3>6、奖励与荣誉（Awards & Honors）</h3>
             <div class="awards-section">
               <div class="award-category">
                 <h4>学生获奖</h4>
+                <table style="width: 100%; line-height: 1.8em; text-align: center;">
+                  <thead>
+                    <tr>
+                      <th>参赛人员</th>
+                      <th>竞赛名</th>
+                      <th>级别</th>
+                      <th>获奖时间</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>王俊、陈福明、丁俊文</td>
+                      <td>中国研究机器人创新设计大赛</td>
+                      <td>国家三等奖</td>
+                      <td>2025</td>
+                    </tr>
+                    <tr>
+                      <td>丁俊文、王俊、陈福明</td>
+                      <td>中国研究生电子设计竞赛</td>
+                      <td>西南赛区一等奖</td>
+                      <td>2025</td>
+                    </tr>
+                    <tr>
+                      <td>王俊</td>
+                      <td>华为ICT实践赛云赛道</td>
+                      <td>省级二等奖</td>
+                      <td>2025</td>
+                    </tr>
+                    <tr>
+                      <td>陈福明、张辉、王俊、林杰、罗俊松、多滨</td>
+                      <td>CBASE 2025</td>
+                      <td>BEST PAPER AWARD CERTIFICATE</td>
+                      <td>2025</td>
+                    </tr>
+                    <tr>
+                      <td>陈福明</td>
+                      <td>CBASE 2025</td>
+                      <td>最佳口头汇报奖</td>
+                      <td>2025</td>
+                    </tr>
+                  </tbody>
+                </table>
                 <!-- <div class="award-item">
-                  <div class="award-title">"挑战杯"全国大学生课外学术科技作品竞赛一等奖</div>
-                  <div class="award-detail">团队成员：张三、李四、王五</div>
-                  <div class="award-year">2024年</div>
+                  <div class="award-title">中国研究机器人创新设计大赛</div>
+                  <div class="award-detail">团队成员：王俊、陈福明、丁俊文</div>
+                  <div class="award-detail">指导老师：多滨</div>
+                  <div class="award-detail">国家三等奖</div>
+                  <div class="award-year">2025年</div>
                 </div> -->
               </div>
 
               <div class="award-category">
                 <h4>教师获奖</h4>
+                <table style="width: 100%; line-height: 1.8em; text-align: center;">
+                  <thead>
+                    <tr>
+                      <th>竞赛名</th>
+                      <th>级别</th>
+                      <th>获奖时间</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>5G+ 网联无人机群智协同控制系统关键技术及应用</td>
+                      <td>中国发明协会发明创业奖创新奖二等奖</td>
+                      <td>2025</td>
+                    </tr>
+                  </tbody>
+                </table>
                 <!-- <div class="award-item">
                   <div class="award-title">中国发明协会发明创业奖创新奖二等奖</div>
                   <div class="award-detail">项目：面向无人系统的智能感知与决策技术</div>
@@ -498,10 +616,12 @@ pre, code {
         </div>
 
         <div class="project">
-          <h2><a name="Research Projects">科研项目（Research Projects）</a></h2>
+          <h2>
+            <a name="Research Projects">科研项目（Research Projects）</a>
+          </h2>
           <p>团队近年来获批的部分科研项目</p>
 
-          <table>
+          <table style="width: 100%; line-height: 1.8em; text-align: center;">
             <thead>
               <tr>
                 <th>序号</th>
@@ -513,115 +633,119 @@ pre, code {
             <tbody>
               <tr>
                 <td>1</td>
-                <td>国家自然科学基金委重大项目</td>
-                <td>1项</td>
-                <td>2000</td>
+                <td>国家自然科学基金委项目</td>
+                <td>3项</td>
+                <td>88</td>
               </tr>
               <tr>
                 <td>2</td>
-                <td>国家自然科学基金委仪器专项</td>
-                <td>1项</td>
-                <td>738</td>
+                <td>国家重点研发计划项目</td>
+                <td>2项</td>
+                <td>567</td>
               </tr>
               <tr>
                 <td>3</td>
-                <td>国家自然科学基金委重点项目</td>
-                <td>3项</td>
-                <td>900</td>
+                <td>国家xxx项目</td>
+                <td>1项</td>
+                <td>600</td>
               </tr>
               <tr>
                 <td>4</td>
-                <td>军委科技委重大专项课题</td>
-                <td>1项</td>
-                <td>2700</td>
+                <td>四川省科技项目</td>
+                <td>5条</td>
+                <td>170</td>
               </tr>
               <tr>
                 <td>5</td>
-                <td>国家***专项</td>
-                <td>3项</td>
-                <td>1100</td>
+                <td>其他省部级科技项目</td>
+                <td>7项</td>
+                <td>299</td>
               </tr>
               <tr>
                 <td>6</td>
-                <td>中央军委装备发展部项目</td>
-                <td>4项</td>
-                <td>1100</td>
-              </tr>
-              <tr>
-                <td>7</td>
-                <td>国家重点研发计划课题</td>
-                <td>4项</td>
-                <td>2594</td>
-              </tr>
-              <tr>
-                <td>8</td>
-                <td>国家海洋局课题</td>
-                <td>3项</td>
-                <td>2800</td>
-              </tr>
-              <tr>
-                <td>9</td>
-                <td>*****四期</td>
+                <td>横向委托</td>
                 <td>2项</td>
-                <td>1550</td>
+                <td>238</td>
               </tr>
             </tbody>
           </table>
-
         </div>
         <!-- 新增科研与实验平台 -->
         <div class="platform">
-          <h2><a name="Research Platform">科研与实验平台（Research Platform）</a></h2>
+          <h2>
+            <a name="Research Platform">科研与实验平台（Research Platform）</a>
+          </h2>
           <div class="platform-section">
-
             <div class="platform-category">
-              <h4>无人系统平台</h4>
               <div class="platform-item">
-                <div class="platform-name">无人机飞行测试平台</div>
-                <div class="platform-desc">配备多旋翼、固定翼等多种类型无人机，具备室内外飞行测试能力，支持自主导航、避障、集群协同等研究。</div>
-                <div class="show">
+                <div class="platform-name">异构无人平台协同控制实验室</div>
+                <div class="platform-desc">
+                  配备无人机、无人车、机械狗等异构无人装备及边缘智能计算节点，具备复杂场景下多平台协同感知、动态任务调度与路径规划的仿真测试能力，支持异构平台统一建模、跨域协同控制算法等前沿关键技术研究。
+                </div>
+                <br>
+                <!-- <div class="show">
                   <h2><a name="Experimental demonstration">实验展示</a></h2>
                   <h5>DANGER ZONE—南海福建舰特供版</h5>
-                  <div style="position: relative; padding: 30% 45%;">
-
-                    <iframe style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"
+                  <div style="position: relative; padding: 30% 45%">
+                    <iframe style="
+                          position: absolute;
+                          width: 100%;
+                          height: 100%;
+                          left: 0;
+                          top: 0;
+                        "
                       src="//player.bilibili.com/player.html?isOutside=true&aid=115247797115642&bvid=BV14KnwzSENo&cid=32560776440&p=1"
                       scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true">
-
                     </iframe>
                   </div>
-                  <br>
-                  <br>
+                  <br />
+                  <br />
                   <p>
                     首先非常感谢各位支持这一次福建舰公开弹射视频的二次创作，很荣幸能够得到大家的喜爱与支持。虽然我本人账号并非以军宣剪辑为主，但在22号央媒公布福建舰的弹射视频的那一瞬间，我觉得我必须制作这样的一个视频，因为作为一位中国军迷已经等待这一刻实在是太久了，故而便有了现在的这版视频。评论区的同志们也给予了我很多支持与建议，我也进行了多次的修改与换源，但若想进行再一步的改进，可能会对现有的这期视频的弹幕与观众互动造成影响，所以为了满足大家的需求并回应大家的支持，我将尽快制作以本次央媒放出的福建舰弹射视频为主，辅以以往山东舰，辽宁舰的部分机务人员视角的1986年版《TOPGUN》4分钟完整片头调色剪辑复刻版福建舰弹射视频。现在先放出部分样片静帧展示。
-
                     什么？你说为啥不做第二部片头的版本，肥电和超级大黄蜂配得上重型舰载机的音乐吗
-
-                    我们下个视频见</p>
-                  <br>
-                  <br>
-                </div>
+                    我们下个视频见
+                  </p>
+                  <br />
+                  <br />
+                </div> -->
               </div>
               <div class="platform-item">
-                <div class="platform-name">智能感知与决策实验平台</div>
-                <div class="platform-desc">集成多种传感器（激光雷达、摄像头、IMU等），支持环境感知、目标识别、路径规划等算法验证。</div>
+                <div class="platform-name">无人系统协同通信实验平台</div>
+                <div class="platform-desc">
+                  配备软件定义无线电、自组织网络节点及复杂环境模拟器，具备极端场景下通信链路稳定性测试、抗干扰性能验证能力，支持自组织网络拓扑优化、AI 自适应路由协议等前沿关键技术研究。
+                </div>
+                <br>
+              </div>
+              <div class="platform-item">
+                <div class="platform-name">无人系统安全攻防测试平台</div>
+                <div class="platform-desc">
+                  配备虚实结合仿真系统、攻击模拟终端及密码防护测试设备，具备无人系统漏洞挖掘、攻防演练与安全评估能力，支持网络威胁溯源、控制安全防护策略等前沿关键技术研究。
+                </div>
+                <br>
+              </div>
+              <div class="platform-item">
+                <div class="platform-name">工业大模型研发与应用中心</div>
+                <div class="platform-desc">
+                  配备 GPU 计算集群、工业多模态数据集库及模型训练平台，具备工业大模型预训练、微调与推理性能测试能力，支持领域知识增强预训练、工业场景智能决策算法等前沿关键技术研究。
+                </div>
+                <br>
               </div>
             </div>
           </div>
         </div>
-
       </td>
     </tr>
   </table>
 </body>
 
 <script type="module">
-  import { ipData, qikanData, huiyiData, zhuanzhuData } from "./data/Achievements.js"
+  import {
+    ipData,
+    qikanData,
+    huiyiData,
+    zhuanzhuData,
+  } from "./data/Achievements.js";
 </script>
 <script type="module" src="./data/baseData.js"></script>
 
 </html>
-
-
-
-
