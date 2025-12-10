@@ -71,12 +71,21 @@ export const huiyiData = [
 
 // 专著数据队列（2条）
 export const zhuanzhuData = [
-  `暂无数据`
+  `<b>Bin Duo</b>, Xiaojun Yuan and Yifan Liu, Securing Unmanned Aerial Vehicle Networks: Models and Algorithms. Springer, 2023.`
 ];
 
 // 知识产权数据队列（2条）
 export const ipData = [
-  `暂无数据`
+  `国家发明专利，一种车载无人机协同物流配送系统及方法，2025`,
+  `国家发明专利，一种港口空地协同智能自主巡检机器人系统及方法，2025`,
+  `国家发明专利，无人机与地面站间的身份认证与密钥协商方法及系统，2025`,
+  `软件著作权，多功能配送无人机管理系统，2025`,
+  `软件著作权，多跳中继无人机物流配送软件，2025`,
+  `软件著作权，无人机系统安全靶场平台，2025`,
+  `软件著作权，低慢小无人机目标识别跟踪反制系统，2025`,
+  `国际发明专利，A Data Collection Method for UAV - enabled Wireless Sensor Network Assisted by Multiple Reconfigurable Intelligent Surfaces，2024`,
+  `国家发明专利，一种基于无人机平台的反制系统及反制方法，2024`,
+  `国家发明专利，面向IIoT的具有条件隐私保护的认证密钥协商方法，2024`,
 ];
 
 
@@ -150,7 +159,7 @@ class PaginationManager {
 
   updateStats() {
     if (this.statsElementId) {
-      document.getElementById(this.statsElementId).textContent = `共${this.data.length}篇论文`;
+      document.getElementById(this.statsElementId).textContent = `共${this.data.length}篇`;
     }
   }
 
@@ -222,5 +231,4 @@ document.addEventListener('DOMContentLoaded', function () {
     pageSizeSelectId: 'ip-page-size-select',
     statsElementId: 'ip-stats'
   });
-
 });
