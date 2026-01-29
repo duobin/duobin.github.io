@@ -2,8 +2,6 @@
 /***
  * 注意新的数据全部放到数组最前面
  * 因为显示数据是直接从0开始读取
- * 
- * 
  */
 // 期刊论文数据队列（73条）
 export const qikanData = [
@@ -31,7 +29,7 @@ export const qikanData = [
   `李苗，何茂霖，罗俊松，宁进，胡艳梅, <b>多滨</b>*. 无人机集群通信技术：最新进展及发展动向[J]. 无线电工程, 2024,54(7):1622-1633. (中文核心)`,
   `Aijia Shen, Junsong Luo*, Jin Ning, Yilian Li, Zibin Wang*, <b>Bin Duo</b>. Safeguarding UAV networks against active eavesdropping: An elevation angle-distance trade-off for secrecy enhancement[J], Drones, 2023,7(2): 109. (<b>SCI, 中科院2区</b>)`,
   `Jin Ning, Yanhong Zhou, Xiaojuan Liao, <b>Bin Duo</b>*. Single remote sensing image dehazing using robust light-dark prior[J], Remote Sensing, 2023, 15(4): 938. (<b>SCI, 中科院2区Top</b>)`,
-  `Huan Lai, Dongfen Li,*, Fang Xu, Xiao Wang, Jin Ning, Yanmei Hu, <b>Bin Duo</b>. Optimization of Full-Duplex UAV Secure Communication with the Aid of RIS[J]. Drones,2023, 7(9):591. (<b>SCI, 中科院2区</b>)`,
+  `Huan Lai, Dongfen Li*, Fang Xu, Xiao Wang, Jin Ning, Yanmei Hu, <b>Bin Duo</b>. Optimization of Full-Duplex UAV Secure Communication with the Aid of RIS[J]. Drones,2023, 7(9):591. (<b>SCI, 中科院2区</b>)`,
   `Kaiyuan Tian, Yani Chi, <b>Bin Duo</b>,Xiaojun Yuan. Hybrid offline-online design for reconfigurable intelligent surface aided UAV communication[J].IEEE Communications Letters, 2023, 27(5): 1372-1376. <b>(SCI, 中科院3区)</b>`,
   `Yu Lei, Yifan Liu, Qingqing Wu, Xiaojun Yuan, Jin Ning,Bin Duo. Enhancing UAV-enabled communications via multiple intelligent omni-surfaces[J].IEEE Communications Letters, 2023, 27(2): 655-660. <b>(SCIE，中科院3区)</b>`,
   `付振江, 罗俊松, 宁进, <b>多滨*</b>. 无人机集群通信的应用现状及展望[J]. 无线电工程, 2023, 53(404): 3-10. (中文核心)`,
@@ -41,7 +39,6 @@ export const qikanData = [
   `周艳红,丁志恒,<b>多滨</b>.无人机群自组网MAC协议综述[J]:无线电工程.2023, 54(423):1917-1927. (中文核心)`,
   `Yifan Liu,<b>Bin Duo</b>,Qingqing Wu,Xiaojun Yuan, Yonghui Li. Full-dimensional rate enhancement for UAV-enabled communications via intelligent omni-surface[J]. IEEE Wireless Communications Letters, 2022, 11(9): 1955-1959. (<b>SCI，中科院2区</b>)`,
   `Kaiyuan Tian , <b>Bin Duo</b>,Sixian Li,Yong Zuo, Xiaojun Yuan. Hybrid Uplink and Downlink Transmissions for Full-Duplex UAV Communication With RIS[J]. IEEE Wireless Communications Letters, 2022, 11(4): 866-870. (<b>SCI，中科院2区</b>)`,
-
   `Xinhong Dai, <b>Bin Duo</b>, Xiaojun Yuan, Wanbin Tang. Energy-efficient UAV communications: A generalised propulsion energy consumption model[J]. IEEE Wireless Communications Letters, 2022, 11(10): 2150-2154. (<b>SCI，中科院2区</b>)`,
   `Zhiyuan Zhai, Xinhong Dai, <b>Bin Duo</b>, Xin Wang, Xiaojun Yuan. Energy-efficient UAV-mounted RIS assisted mobile edge computing[J]. IEEE Wireless Communications Letters, 2022, 11(21): 2507-2511. (<b>SCI，中科院2区，IF=5.281</b>)`,
   `Abuzar B. M. Adam, Zhengqiang Wang, Xiaoyu Wan,Yongjun Xu, <b>Bin Duo</b>. Energy-efficient power allocation in downlink multi-cell multi-carrier NOMA: Special deep neural network framework[J]. Accepted by IEEE Transactions on Cognitive Communications and Networking, 2022, 8(4): 1770-1783. (<b>SCI，中科院2区</b>)`,
@@ -53,20 +50,18 @@ export const qikanData = [
   `<b>Bin Duo,</b> Qingqing Wu,Xiaojun Yuan, Rui Zhang. Anti-jamming 3D trajectory design for UAV-enabled wireless sensor networks under probabilistic LoS channel[J]. IEEE Transactions on Vehicular Technology, 2020, 69(12): 16288-16293. (<b>SCI，中科院2区Top</b>)`,
   `<b>Bin Duo</b>, Qingqing Wu,Xiaojun Yuan,Rui Zhang. Energy efficiency maximization for full-duplex UAV secrecy communication[J]. IEEE Transactions on Vehicular Technology, 2020, 69(4): 4590-4595. (<b>SCI，中科院2区Top</b>)`,
   `Sixian Li, <b>B. Duo</b>, Xiaojun Yuan,Ying-Chang Liang ,Marco Di Renzo. Reconfigurable intelligent surface assisted UAV communication: Joint trajectory design and passive beamforming[J]. IEEE Wireless Communications Letters, 2020, 9(5):716-720. (<b>SCI，中科院2区，ESI高被引，热点论文</b>)`,
-
-
 ];
 
 // 会议论文数据队列（10条）
 export const huiyiData = [
-  `Boyuan Liu, Xinhong Dai, Xiaojun Yuan,<b>Bin Duo</b>, Xin Wang*, Energy-Efficient UAV-Mounted RIS Assisted Communication with Tilting Effect[C]. 2025 10th International Conference on Computer and Communication System (ICCCS), Chengdu, China, 2025, pp. 1-62. (EI)`,
-  `Guohao Lan, Junsong Luo, Jing Ning, Zhangping Li, Dongfen Li, <b>Bin Duo</b>*. A Mutual Authentication and Key Agreement Scheme Based on PUF and Machine Learning for UAV Communications[C]. Springer Aerospace Technology, 2025. (EI)`,
-  `Yujia Li, Dong fen Li, Jing Ning, Jie Lin, Zibin Wang, <b>Bin Duo</b>*. Autonomous Drone-Borne Anti-Drone System: Leveraging Deauthentication Attacks for Automated Countermeasures[C]. Springer Aerospace Technology, 2025. (EI) `,
-  `Jun Wang, Dongfen Li, Jing Ning, Jie Lin, Zibin Wang, <b>Bin Duo</b>*. An Improved UAV Countermeasure Strategy Based on GPS Spoofing[C]. Springer Aerospace Technology,2025. (EI)`,
-  `<b>Bin Duo</b> , Aijia Shen , Yuankai Ning, Mingqian Shao, Jin Ning , Junsong Luo,  Zibin Wang.Multi-RISs Assisted UAV-Enabled Wireless Sensor Network[C]. 2023 International Conference on Advanced Unmanned Aerial Systems (ICAUAS 2023), 2023. (EI)`,
-  `Yanhong Zhou, Jin Ning*,Zhiheng Ding, <b>Bin Duo</b>. An Energy-Efficient UAVS Ad Hoc Network MAC Protocol[C]. 2023 IEEE 11th International Conference on Information, Communication and Networks (ICICN 2023). Xi'an, 2023. (EI)`,
-  `Mingqian Shao, Yifan Liu, <b>Bin Duo</b>, Jin Ning, Junsong Luo, Xing Zhu, Mingzhe Liu, Zhengqiang Wang. Joint Passive Beamforming and Elevation Angle-Dependent Trajectory Design for RIS-aided UAV-enabled Wireless Sensor Networks[C], IEEE SECON 2022, 2022: 488-496. (EI)`,
-  `<b>Bin Duo</b>, Hao Hu, Yilian Li, Xiaojun Yuan.Joint trajectory and power optimization in probabilistic LoS channel for UAV-Enabled cooperative jamming[C], IEEE International Conference on Communications (ICC), 2021, pp. 1-6. (EI)`,
+  `Boyuan Liu, Xinhong Dai, Xiaojun Yuan,<b>Bin Duo</b>, Xin Wang*, Energy-Efficient UAV-Mounted RIS Assisted Communication with Tilting Effect[C]. 2025 10th International Conference on Computer and Communication System (ICCCS), Chengdu, China, 2025, pp. 1-6. (EI)`,
+  `Guohao Lan, Junsong Luo, Jing Ning, Zhangping Li, Dongfen Li, <b>Bin Duo</b>*. A Mutual Authentication and Key Agreement Scheme Based on PUF and Machine Learning for UAV Communications[C]. International Conference on Advanced Unmanned Aerial Systems. Singapore: Springer Nature Singapore, 2024: 346-353. (EI)`,
+  `Yujia Li, Dong fen Li, Jing Ning, Jie Lin, Zibin Wang, <b>Bin Duo</b>*. Autonomous Drone-Borne Anti-Drone System: Leveraging Deauthentication Attacks for Automated Countermeasures[C].International Conference on Advanced Unmanned Aerial Systems. Singapore: Springer Nature Singapore, 2024: 362-369. (EI)`,
+  `Jun Wang, Dongfen Li, Jing Ning, Jie Lin, Zibin Wang, <b>Bin Duo</b>*. An Improved UAV Countermeasure Strategy Based on GPS Spoofing[C]. International Conference on Advanced Unmanned Aerial Systems. Singapore: Springer Nature Singapore, 2024: 370-378 (EI)`,
+  `<b>Bin Duo</b>* , Aijia Shen , Yuankai Ning, Mingqian Shao, Jin Ning , Junsong Luo,  Zibin Wang.Multi-RISs Assisted UAV-Enabled Wireless Sensor Network[C]. International Conference on Advanced Unmanned Aerial Systems. Singapore: Springer Nature Singapore, 2023: 15-32 (EI)`,
+  `Yanhong Zhou, Jin Ning*,Zhiheng Ding, <b>Bin Duo</b>. An Energy-Efficient UAVS Ad Hoc Network MAC Protocol[C]. 2023 IEEE 11th International Conference on Information, Communication and Networks (ICICN). IEEE, 2023: 307-315. (EI)`,
+  `Mingqian Shao, Yifan Liu, <b>Bin Duo</b>, Jin Ning, Junsong Luo, Xing Zhu, Mingzhe Liu, Zhengqiang Wang. Joint Passive Beamforming and Elevation Angle-Dependent Trajectory Design for RIS-aided UAV-enabled Wireless Sensor Networks[C], 2022 19th Annual IEEE International Conference on Sensing, Communication, and Networking (SECON). IEEE, 2022: 488-496. (EI)`,
+  `<b>Bin Duo</b>, Hao Hu, Yilian Li, Xiaojun Yuan.Joint trajectory and power optimization in probabilistic LoS channel for UAV-Enabled cooperative jamming[C], ICC 2021-IEEE International Conference on Communications. IEEE, 2021: 1-6. (EI)`,
 ];
 
 // 专著数据队列（2条）
