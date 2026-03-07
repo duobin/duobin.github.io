@@ -71,6 +71,7 @@ export const zhuanzhuData = [
 
 // 知识产权数据队列（2条）
 export const ipData = [
+  //`xxxxxxxxxxxx`,
   `国家发明专利，一种车载无人机协同物流配送系统及方法，2025`,
   `国家发明专利，一种港口空地协同智能自主巡检机器人系统及方法，2025`,
   `国家发明专利，无人机与地面站间的身份认证与密钥协商方法及系统，2025`,
@@ -83,6 +84,20 @@ export const ipData = [
   `国家发明专利，面向IIoT的具有条件隐私保护的认证密钥协商方法，2024`,
 ];
 
+//学生获奖数据（按表头顺序：参赛人员、竞赛名、级别、获奖时间）
+const studentAwards = [
+  //{ members: 'xxx', competition: 'xxx', level: 'xx', year: '202x' },
+    { members: '王俊、陈福明、丁俊文', competition: '中国研究机器人创新设计大赛', level: '国家三等奖', year: '2025' },
+    { members: '丁俊文、王俊、陈福明', competition: '中国研究生电子设计竞赛', level: '西南赛区一等奖', year: '2025' },
+    { members: '王俊', competition: '华为ICT实践赛云赛道', level: '省级二等奖', year: '2025' },
+    { members: '陈福明、张辉、王俊、林杰、罗俊松、多滨', competition: 'CBASE 2025', level: 'BEST PAPER AWARD CERTIFICATE', year: '2025' },
+    { members: '陈福明', competition: 'CBASE 2025', level: '最佳口头汇报奖', year: '2025' }
+  ];
+
+  // 教师获奖数据（按表头顺序：竞赛名、级别、获奖时间）
+  const teacherAwards = [
+    { competition: '5G+ 网联无人机群智协同控制系统关键技术及应用', level: '中国发明协会发明创业奖创新奖二等奖', year: '2025' }
+  ];
 
 // 分页管理类
 class PaginationManager {
@@ -226,4 +241,46 @@ document.addEventListener('DOMContentLoaded', function () {
     pageSizeSelectId: 'ip-page-size-select',
     statsElementId: 'ip-stats'
   });
+
+    // 渲染学生获奖表格
+  const studentH4 = Array.from(document.querySelectorAll('h4')).find(h4 => h4.textContent.trim() === '学生获奖');
+  if (studentH4) {
+    const table = studentH4.nextElementSibling;
+    if (table && table.tagName === 'TABLE') {
+      const tbody = table.querySelector('tbody');
+      if (tbody) {
+        tbody.innerHTML = ''; // 清空原有静态行
+        studentAwards.forEach(item => {
+          const tr = document.createElement('tr');
+          [item.members, item.competition, item.level, item.year].forEach(text => {
+            const td = document.createElement('td');
+            td.textContent = text;
+            tr.appendChild(td);
+          });
+          tbody.appendChild(tr);
+        });
+      }
+    }
+  }
+
+  // 渲染教师获奖表格
+  const teacherH4 = Array.from(document.querySelectorAll('h4')).find(h4 => h4.textContent.trim() === '教师获奖');
+  if (teacherH4) {
+    const table = teacherH4.nextElementSibling;
+    if (table && table.tagName === 'TABLE') {
+      const tbody = table.querySelector('tbody');
+      if (tbody) {
+        tbody.innerHTML = '';
+        teacherAwards.forEach(item => {
+          const tr = document.createElement('tr');
+          [item.competition, item.level, item.year].forEach(text => {
+            const td = document.createElement('td');
+            td.textContent = text;
+            tr.appendChild(td);
+          });
+          tbody.appendChild(tr);
+        });
+      }
+    }
+  }
 });
