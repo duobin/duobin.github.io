@@ -151,17 +151,17 @@
     }
 
     /* 导航链接：激活 / 当前页状态 */
-    /* .layout-menu .menu-item a.active,
+    .layout-menu .menu-item a.active,
     .layout-menu .menu-item a.current {
       background: linear-gradient(90deg, #c8e0ff 0%, #e8f3ff 100%);
       color: #0056b3;
       border-left-color: #0056b3;
       font-weight: 700;
       padding-left: 26px;
-    } */
+    }
 
     /* 激活状态右侧蓝色圆点指示器 */
-    /* .layout-menu .menu-item a.active::after {
+    .layout-menu .menu-item a.active::after {
       content: '';
       position: absolute;
       right: 12px;
@@ -171,7 +171,7 @@
       height: 6px;
       background: #0056b3;
       border-radius: 50%;
-    } */
+    }
 
 
     /* ============================================================
@@ -774,7 +774,8 @@
           </div>
           <div class="leader-email">
             <em class="email-icon">✉</em>
-            <b>Email: </b>duo_bin@163.com
+            <b>Email: </b><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+              data-cfemail="a9cddcc6f6cbc0c7e9989f9a87cac6c4">[email&#160;protected]</a>
           </div>
         </div>
 
@@ -982,6 +983,7 @@
   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 </body>
 
 <script type="module">
@@ -996,5 +998,18 @@
 </script>
 <script type="module" src="./data/baseData.js"></script>
 <script type="module" src="./data/projectAndPlatform.js"></script>
+// 粘贴到控制台运行
+const contentEl = document.querySelector('.layout-content');
+console.log('scrollTop:', contentEl.scrollTop);
 
+const anchor = document.querySelector('a[name="Recent News"]');
+console.log('anchor:', anchor);
+
+let top = 0, el = anchor;
+while (el && el !== contentEl) {
+console.log(el.tagName, el.offsetTop, el.offsetParent);
+top += el.offsetTop;
+el = el.offsetParent;
+}
+console.log('total offsetTop:', top);
 </html>

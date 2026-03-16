@@ -32,7 +32,6 @@ intro.forEach(item => {
   addIntro(introPart, item);
 })
 researchDirection.forEach((item, index) => {
-  console.log(item)
   addgroupDire(groupDire, item, index);
 })
 
@@ -109,15 +108,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 // 侧栏滚动激活高亮
 document.addEventListener("DOMContentLoaded", function () {
-  const contentEl = document.querySelector('.layout-content');
-  if (!contentEl) return;
-
-  // 所有侧栏链接（包括 Home 等非锚点链接）
   const allMenuLinks = document.querySelectorAll('.layout-menu .menu-item a');
-  // 仅锚点链接（href="#..."）
   const anchorLinks = document.querySelectorAll('.layout-menu .menu-item a[href^="#"]');
 
-  // 清除所有高亮状态（active + current）
   function clearAll() {
     allMenuLinks.forEach(l => {
       l.classList.remove('active');
@@ -126,15 +119,18 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function updateActiveLink() {
-    const containerRect = contentEl.getBoundingClientRect();
-    const threshold = containerRect.top + 100;
+    // getBoundingClientRect().top 是相对视口的距离，随滚动实时变化
+    // 当锚点滚动到视口顶部 threshold 以内时，触发高亮
+    const threshold = 140;
 
     let activeId = null;
     anchorLinks.forEach(link => {
       const targetId = decodeURIComponent(link.getAttribute('href').slice(1));
-      const anchor = document.querySelector(`a[name="${targetId}"]`);
+      const anchor = document.querySelector(`a[name="${targetId}"], [id="${targetId}"]`);
       if (!anchor) return;
-      if (anchor.getBoundingClientRect().top <= threshold) {
+      // top <= threshold 说明该锚点已滚动到视口顶部附近或以上
+      const top = anchor.getBoundingClientRect().top;
+      if (top <= threshold) {
         activeId = targetId;
       }
     });
@@ -142,18 +138,16 @@ document.addEventListener("DOMContentLoaded", function () {
     clearAll();
 
     if (activeId) {
-      // 命中某个锚点区块，高亮对应链接
       anchorLinks.forEach(link => {
         const id = decodeURIComponent(link.getAttribute('href').slice(1));
         if (id === activeId) link.classList.add('active');
       });
     } else {
-      // 页面在最顶部，没有任何锚点进入视口，高亮 Home
       const homeLink = document.querySelector('.layout-menu .menu-item a[href="index.html"]');
       if (homeLink) homeLink.classList.add('active');
     }
   }
 
-  contentEl.addEventListener('scroll', updateActiveLink);
-  setTimeout(updateActiveLink, 300);
+  window.addEventListener('scroll', updateActiveLink);
+  updateActiveLink();
 });
