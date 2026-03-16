@@ -5,6 +5,10 @@
  */
 // 期刊论文数据队列（73条）
 export const qikanData = [
+  `兰国豪,张辉,<b>多滨</b>等. 一种轻量且高可靠的APUF激励生成策略, 电子与信息安全学报，2026. （T1级期刊）`,
+  `罗欣悦, 刘同, 陈文龙, 罗俊松, 王梓斌, <b>多滨</b>. 无人集群通感算协同仿真系统综述：现状、技术与展望[J/OL]. 无线电工程, 2025（网络首发）. <b>（中文核心）</b>`,
+  `Maolin He, <b>Bin Duo*</b>, Ping Huang, Junsong Luo, Dongfen Li, Jun Li. 1+1 Protection Transmission for UAV-Enabled Computing Power Networks via Multi-Agent Reinforcement Learning[J]. IEEE Transactions on Network and Service Management, 2026. (<b>SCI, 中科院2区</b>).`,
+  `李宇佳, 张辉, <b>多滨*</b>, 王梓斌, 周让, 李冬芬. 无人机系统安全靶场构建与攻防验证设计[J]. 网络与信息安全学报, 2026. <b>（T1级期刊）</b>`,
   `Zhengqiang Wang, Kunhao Huang, Yongjun Xu, <b>Bin Duo</b>, Chengyu Wu, Liuwei Huo. Max-min security energy efficiency optimization for UAV-RIS-enhanced short-packet communication systems[J]. Chinese Journal of Aeronautics, 2025,38(10):103528. (<b>SCI, 中科院1区Top</b>).`,
   `Xinhong Dai, <b>Bin Duo</b>, Xiaojun Yuan, Marco DiRenzo. Energy-Efficient UAV Communications With Directional Antennas: Tilting Effect Modeling and Trajectory Optimization[J]. IEEE Transactions on Vehicular Technology, 2025.74(7):11194-11206. (<b>SCI, 中科院2区Top</b>).`,
   `Fang Xu, Zhijie Xie, Kai Hu,Yu Liu*, Shenghui Song, Thomas Aaron Gulliver, Yiyuan Xie, Yandong Yang, <b>Bin Duo</b>, Yuanchen Wang, Multiantenna UAV-Assisted Hybrid FSO/RF Data Collection for IoT: Optimal Design for Fairness[J]. IEEE Transactions on Aerospace and Electronic Systems, 2025.61(5):12376-12386. (<b>SCI, 中科院2区</b>)`,
@@ -96,7 +100,12 @@ const studentAwards = [
 
   // 教师获奖数据（按表头顺序：竞赛名、级别、获奖时间）
   const teacherAwards = [
-    { competition: '5G+ 网联无人机群智协同控制系统关键技术及应用', level: '中国发明协会发明创业奖创新奖二等奖', year: '2025' }
+    { competition: '5G+ 网联无人机群智协同控制系统关键技术及应用', level: '中国发明协会发明创业奖创新奖二等奖', year: '2025' },
+    { competition: '四川省XXX科技领军人才', level: '省部级', year: '2023' },
+    { competition: '成都市XXX青年科技人才', level: '市厅级', year: '2024' },
+    { competition: '5G+智慧无人机航迹动态规划与智能控制设备研发', level: '产学研创新协同奖三等奖', year: '2023' },
+    { competition: 'Multi-RISs Assisted UAV-Enabled Wireless Sensor Network Best Paper Award (International Conference on Advanced Unmanned Aerial Systems)', level: '国际会议最佳论文奖', year: '2023' },
+    { competition: 'UAV-Enabled Delivery in the Low-Altitude Economy: Opportunities and Challenges, Invited Talk', level: '特邀报告', year: '2024' }
   ];
 
 // 分页管理类
