@@ -774,8 +774,7 @@
           </div>
           <div class="leader-email">
             <em class="email-icon">✉</em>
-            <b>Email: </b><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
-              data-cfemail="a9cddcc6f6cbc0c7e9989f9a87cac6c4">[email&#160;protected]</a>
+            <b>Email: </b>duo_bin@163.com
           </div>
         </div>
 
@@ -998,18 +997,5 @@
 </script>
 <script type="module" src="./data/baseData.js"></script>
 <script type="module" src="./data/projectAndPlatform.js"></script>
-// 粘贴到控制台运行
-const contentEl = document.querySelector('.layout-content');
-console.log('scrollTop:', contentEl.scrollTop);
 
-const anchor = document.querySelector('a[name="Recent News"]');
-console.log('anchor:', anchor);
-
-let top = 0, el = anchor;
-while (el && el !== contentEl) {
-console.log(el.tagName, el.offsetTop, el.offsetParent);
-top += el.offsetTop;
-el = el.offsetParent;
-}
-console.log('total offsetTop:', top);
 </html>
