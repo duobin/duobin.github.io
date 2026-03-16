@@ -89,7 +89,7 @@ export const ipData = [
 ];
 
 //学生获奖数据（按表头顺序：参赛人员、竞赛名、级别、获奖时间）
-const studentAwards = [
+export const studentAwards = [
   //{ members: 'xxx', competition: 'xxx', level: 'xx', year: '202x' },
     { members: '王俊、陈福明、丁俊文', competition: '中国研究机器人创新设计大赛', level: '国家三等奖', year: '2025' },
     { members: '丁俊文、王俊、陈福明', competition: '中国研究生电子设计竞赛', level: '西南赛区一等奖', year: '2025' },
@@ -98,8 +98,8 @@ const studentAwards = [
     { members: '陈福明', competition: 'CBASE 2025', level: '最佳口头汇报奖', year: '2025' }
   ];
 
-  // 教师获奖数据（按表头顺序：竞赛名、级别、获奖时间）
-  const teacherAwards = [
+// 教师获奖数据（按表头顺序：荣誉/奖项名称、级别、获奖时间）
+export const teacherAwards = [
     { competition: '5G+ 网联无人机群智协同控制系统关键技术及应用', level: '中国发明协会发明创业奖创新奖二等奖', year: '2025' },
     { competition: '四川省XXX科技领军人才', level: '省部级', year: '2023' },
     { competition: '成都市XXX青年科技人才', level: '市厅级', year: '2024' },
@@ -205,6 +205,88 @@ class PaginationManager {
   }
 }
 
+// 获奖分页管理类（列项形式，支持自定义列）
+class AwardPaginationManager {
+  constructor(data, containerId, config) {
+    this.data = data;
+    this.containerId = containerId;
+    this.currentPage = 1;
+    this.itemsPerPage = config.itemsPerPage || 5;
+    this.prevButtonId = config.prevButtonId;
+    this.nextButtonId = config.nextButtonId;
+    this.currentPageElementId = config.currentPageElementId;
+    this.totalPagesElementId = config.totalPagesElementId;
+    this.pageSizeSelectId = config.pageSizeSelectId;
+    this.statsElementId = config.statsElementId;
+    this.columns = config.columns || [];
+    this.init();
+  }
+
+  init() {
+    this.updateStats();
+    this.displayCurrentPage();
+    this.setupEventListeners();
+  }
+
+  getTotalPages() {
+    return Math.ceil(this.data.length / this.itemsPerPage);
+  }
+
+  displayCurrentPage() {
+    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+    const endIndex = startIndex + this.itemsPerPage;
+    const currentPageData = this.data.slice(startIndex, endIndex);
+
+    const container = document.getElementById(this.containerId);
+    container.innerHTML = '';
+
+    const body = document.createElement('div');
+    body.className = 'award-list-body';
+
+    currentPageData.forEach((item, index) => {
+      const globalIndex = startIndex + index;
+      const itemEl = document.createElement('div');
+      itemEl.className = 'award-list-item';
+      let cellsHtml = this.columns.map(col =>
+        `<span class="award-cell award-cell-${col.key}"><span class="award-col-label">${col.label}：</span>${item[col.key] || ''}</span>`
+      ).join('<span class="award-separator"> | </span>');
+      itemEl.innerHTML = `<span class="award-index">[${globalIndex + 1}]</span> ${cellsHtml}`;
+      body.appendChild(itemEl);
+    });
+
+    container.appendChild(body);
+    this.updatePaginationInfo();
+  }
+
+  updatePaginationInfo() {
+    const totalPages = this.getTotalPages();
+    document.getElementById(this.currentPageElementId).textContent = this.currentPage;
+    document.getElementById(this.totalPagesElementId).textContent = totalPages;
+    document.getElementById(this.prevButtonId).disabled = this.currentPage === 1;
+    document.getElementById(this.nextButtonId).disabled = this.currentPage === totalPages;
+  }
+
+  updateStats() {
+    if (this.statsElementId) {
+      document.getElementById(this.statsElementId).textContent = `共 ${this.data.length} 项记录`;
+    }
+  }
+
+  setupEventListeners() {
+    document.getElementById(this.prevButtonId).addEventListener('click', () => {
+      if (this.currentPage > 1) { this.currentPage--; this.displayCurrentPage(); }
+    });
+    document.getElementById(this.nextButtonId).addEventListener('click', () => {
+      if (this.currentPage < this.getTotalPages()) { this.currentPage++; this.displayCurrentPage(); }
+    });
+    document.getElementById(this.pageSizeSelectId).addEventListener('change', (e) => {
+      this.itemsPerPage = parseInt(e.target.value);
+      this.currentPage = 1;
+      this.displayCurrentPage();
+    });
+  }
+}
+
 // 页面加载完成后初始化所有分页管理器
 document.addEventListener('DOMContentLoaded', function () {
   // 期刊论文分页
@@ -251,45 +333,36 @@ document.addEventListener('DOMContentLoaded', function () {
     statsElementId: 'ip-stats'
   });
 
-    // 渲染学生获奖表格
-  const studentH4 = Array.from(document.querySelectorAll('h4')).find(h4 => h4.textContent.trim() === '学生获奖');
-  if (studentH4) {
-    const table = studentH4.nextElementSibling;
-    if (table && table.tagName === 'TABLE') {
-      const tbody = table.querySelector('tbody');
-      if (tbody) {
-        tbody.innerHTML = ''; // 清空原有静态行
-        studentAwards.forEach(item => {
-          const tr = document.createElement('tr');
-          [item.members, item.competition, item.level, item.year].forEach(text => {
-            const td = document.createElement('td');
-            td.textContent = text;
-            tr.appendChild(td);
-          });
-          tbody.appendChild(tr);
-        });
-      }
-    }
-  }
+  // 学生获奖分页
+  new AwardPaginationManager(studentAwards, 'student-award-container', {
+    itemsPerPage: 5,
+    prevButtonId: 'student-award-prev',
+    nextButtonId: 'student-award-next',
+    currentPageElementId: 'student-award-current-page',
+    totalPagesElementId: 'student-award-total-pages',
+    pageSizeSelectId: 'student-award-page-size',
+    statsElementId: 'student-award-stats',
+    columns: [
+      { key: 'members', label: '参赛人员' },
+      { key: 'competition', label: '竞赛名称' },
+      { key: 'level', label: '获奖等级' },
+      { key: 'year', label: '获奖时间' }
+    ]
+  });
 
-  // 渲染教师获奖表格
-  const teacherH4 = Array.from(document.querySelectorAll('h4')).find(h4 => h4.textContent.trim() === '教师获奖');
-  if (teacherH4) {
-    const table = teacherH4.nextElementSibling;
-    if (table && table.tagName === 'TABLE') {
-      const tbody = table.querySelector('tbody');
-      if (tbody) {
-        tbody.innerHTML = '';
-        teacherAwards.forEach(item => {
-          const tr = document.createElement('tr');
-          [item.competition, item.level, item.year].forEach(text => {
-            const td = document.createElement('td');
-            td.textContent = text;
-            tr.appendChild(td);
-          });
-          tbody.appendChild(tr);
-        });
-      }
-    }
-  }
+  // 教师获奖分页
+  new AwardPaginationManager(teacherAwards, 'teacher-award-container', {
+    itemsPerPage: 5,
+    prevButtonId: 'teacher-award-prev',
+    nextButtonId: 'teacher-award-next',
+    currentPageElementId: 'teacher-award-current-page',
+    totalPagesElementId: 'teacher-award-total-pages',
+    pageSizeSelectId: 'teacher-award-page-size',
+    statsElementId: 'teacher-award-stats',
+    columns: [
+      { key: 'competition', label: '荣誉/奖项名称' },
+      { key: 'level', label: '类别/级别' },
+      { key: 'year', label: '获奖时间' }
+    ]
+  });
 });

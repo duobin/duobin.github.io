@@ -44,13 +44,14 @@ function addIntro(parent, item) {
 }
 
 function addgroupDire(parent, item, index) {
-  var itemElement = document.createElement('li');
+  var itemElement = document.createElement('div');
+  itemElement.className = 'direction-card';
   itemElement.innerHTML = `
-                        <p>研究方向${index + 1}：${item.title}</p>
-                        <p class='direDetail'>
-                            ${item.detail}
-                        </p>
-                    `;
+    <div class="card-number">研究方向 ${String(index + 1).padStart(2, '0')}</div>
+    <div class="card-title">${item.title}</div>
+    <div class="card-detail">${item.detail}</div>
+    <div class="card-expand-hint">悬停展开全文 ▾</div>
+  `;
   parent.appendChild(itemElement);
 }
 
@@ -105,4 +106,54 @@ document.addEventListener("DOMContentLoaded", function () {
   if (newsSizeSelect) newsSizeSelect.addEventListener("change", (e) => { newsItemsPerPage = parseInt(e.target.value); newsCurrentPage = 1; renderNewsPage(); });
 
   renderNewsPage();
+});
+// 侧栏滚动激活高亮
+document.addEventListener("DOMContentLoaded", function () {
+  const contentEl = document.querySelector('.layout-content');
+  if (!contentEl) return;
+
+  // 所有侧栏链接（包括 Home 等非锚点链接）
+  const allMenuLinks = document.querySelectorAll('.layout-menu .menu-item a');
+  // 仅锚点链接（href="#..."）
+  const anchorLinks = document.querySelectorAll('.layout-menu .menu-item a[href^="#"]');
+
+  // 清除所有高亮状态（active + current）
+  function clearAll() {
+    allMenuLinks.forEach(l => {
+      l.classList.remove('active');
+      l.classList.remove('current');
+    });
+  }
+
+  function updateActiveLink() {
+    const containerRect = contentEl.getBoundingClientRect();
+    const threshold = containerRect.top + 100;
+
+    let activeId = null;
+    anchorLinks.forEach(link => {
+      const targetId = decodeURIComponent(link.getAttribute('href').slice(1));
+      const anchor = document.querySelector(`a[name="${targetId}"]`);
+      if (!anchor) return;
+      if (anchor.getBoundingClientRect().top <= threshold) {
+        activeId = targetId;
+      }
+    });
+
+    clearAll();
+
+    if (activeId) {
+      // 命中某个锚点区块，高亮对应链接
+      anchorLinks.forEach(link => {
+        const id = decodeURIComponent(link.getAttribute('href').slice(1));
+        if (id === activeId) link.classList.add('active');
+      });
+    } else {
+      // 页面在最顶部，没有任何锚点进入视口，高亮 Home
+      const homeLink = document.querySelector('.layout-menu .menu-item a[href="index.html"]');
+      if (homeLink) homeLink.classList.add('active');
+    }
+  }
+
+  contentEl.addEventListener('scroll', updateActiveLink);
+  setTimeout(updateActiveLink, 300);
 });
